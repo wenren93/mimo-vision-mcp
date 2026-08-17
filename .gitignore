@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+mcp.config.json
+assets/*
+!assets/.gitkeep
+*.log
+*.zip
+*.tgz
+.DS_Store

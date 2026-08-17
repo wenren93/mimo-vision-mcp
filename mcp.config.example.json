@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vision": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/vision-mcp-typescript/dist/server.js"],
+      "env": {
+        "MIMO_API_KEY": "replace_me",
+        "MIMO_BASE_URL": "https://api.xiaomimimo.com/anthropic",
+        "VISION_MODEL": "mimo-v2.5",
+        "VISION_ASSET_ROOT": "/ABSOLUTE/PATH/vision-mcp-typescript/assets"
+      }
+    }
+  }
+}

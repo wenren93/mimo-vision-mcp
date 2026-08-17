@@ -1,0 +1,56 @@
+{
+  "name": "vision-mcp-typescript",
+  "version": "0.4.0",
+  "description": "Local MCP vision server powered by MiMo-V2.5 for image understanding",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "vision",
+    "mimo",
+    "image-understanding",
+    "model-context-protocol",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wenren93/vision-mcp-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wenren93/vision-mcp-typescript/issues"
+  },
+  "homepage": "https://github.com/wenren93/vision-mcp-typescript#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --enable-source-maps dist/server.js",
+    "dev": "tsx src/server.ts",
+    "add-asset": "tsx src/add-asset.ts",
+    "demo": "npm run build --silent && node --enable-source-maps dist/demo-agent.js",
+    "inspect": "npm run build --silent && npx @modelcontextprotocol/inspector node dist/server.js",
+    "test": "npm run build --silent && node --test dist/*.test.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "dotenv": "^17.2.0",
+    "sharp": "^0.34.3",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}
