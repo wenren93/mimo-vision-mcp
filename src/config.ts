@@ -71,9 +71,22 @@ export function loadAgentRuntimeConfig(): AgentRuntimeConfig {
   };
 }
 
+const MCP_SERVER_ENV_KEYS = [
+  'MIMO_API_KEY',
+  'MIMO_BASE_URL',
+  'VISION_MODEL',
+  'VISION_ASSET_ROOT',
+  'VISION_MAX_FILE_MB',
+  'VISION_MAX_PIXELS',
+  'VISION_TIMEOUT_MS',
+  'PATH',
+  'HOME',
+  'USER',
+] as const;
+
 export function childProcessEnv(): Record<string, string> {
   return Object.fromEntries(
-    Object.entries(process.env).filter(
+    MCP_SERVER_ENV_KEYS.map((key) => [key, process.env[key]] as const).filter(
       (entry): entry is [string, string] => typeof entry[1] === 'string',
     ),
   );
