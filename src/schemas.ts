@@ -1,4 +1,4 @@
-import * as z from "zod/v4";
+import * as z from 'zod/v4';
 
 export const FULL_REGION = { page: 1, x: 0, y: 0, width: 1, height: 1 } as const;
 
@@ -18,15 +18,15 @@ export const InspectImageInputSchema = z
       .string()
       .min(1)
       .max(160)
-      .describe("Server-scoped local asset id, for example img_abc.png or shot_checkout.png"),
+      .describe('Server-scoped local asset id, for example img_abc.png or shot_checkout.png'),
     goal: z
       .string()
       .min(1)
       .max(2_000)
-      .describe("The exact visual question to answer; do not request a generic caption"),
-    mode: z.enum(["auto", "scene", "ocr", "document", "chart", "ui"]).optional(),
-    region: RegionSchema.optional().describe("Optional crop in normalized 0..1 coordinates"),
-    resolution: z.enum(["auto", "low", "high"]).optional(),
+      .describe('The exact visual question to answer; do not request a generic caption'),
+    mode: z.enum(['auto', 'scene', 'ocr', 'document', 'chart', 'ui']).optional(),
+    region: RegionSchema.optional().describe('Optional crop in normalized 0..1 coordinates'),
+    resolution: z.enum(['auto', 'low', 'high']).optional(),
   })
   .strict();
 
@@ -36,7 +36,7 @@ export const ImportImageInputSchema = z
       .string()
       .min(1)
       .max(4_096)
-      .describe("Absolute path to a local image file in one of the configured import roots"),
+      .describe('Absolute path to a local image file in one of the configured import roots'),
   })
   .strict();
 
@@ -78,7 +78,7 @@ export const SecuritySchema = z
 
 export const VisionModelResultSchema = z
   .object({
-    modality: z.enum(["photo", "screenshot", "document", "chart", "ui", "unknown"]),
+    modality: z.enum(['photo', 'screenshot', 'document', 'chart', 'ui', 'unknown']),
     answer: z.string(),
     facts: z.array(FactSchema),
     evidence: z.array(EvidenceSchema),
@@ -91,7 +91,7 @@ export const VisionModelResultSchema = z
   .strict();
 
 export const VisualObservationSchema = VisionModelResultSchema.extend({
-  schemaVersion: z.literal("visual-observation/v1"),
+  schemaVersion: z.literal('visual-observation/v1'),
   assetId: z.string(),
   goal: z.string(),
   source: z

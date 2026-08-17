@@ -1,9 +1,9 @@
-import { AssetStore } from "./asset-store.js";
-import { loadAssetConfig } from "./config.js";
+import { AssetStore } from './asset-store.js';
+import { loadAssetConfig } from './config.js';
 
 const sourcePath = process.argv[2];
 if (!sourcePath) {
-  console.error("Usage: npm run add-asset -- /absolute/path/to/image.png");
+  console.error('Usage: npm run add-asset -- /absolute/path/to/image.png');
   process.exit(2);
 }
 

@@ -1,9 +1,9 @@
-import assert from "node:assert/strict";
-import test from "node:test";
+import assert from 'node:assert/strict';
+import test from 'node:test';
 
-import { mapBoxFromCrop, normalizeRegion } from "./geometry.js";
+import { mapBoxFromCrop, normalizeRegion } from './geometry.js';
 
-test("normalizeRegion clips a crop to the image", () => {
+test('normalizeRegion clips a crop to the image', () => {
   assert.deepEqual(normalizeRegion({ page: 1, x: 0.8, y: 0.9, width: 0.5, height: 0.4 }), {
     page: 1,
     x: 0.8,
@@ -13,7 +13,7 @@ test("normalizeRegion clips a crop to the image", () => {
   });
 });
 
-test("mapBoxFromCrop converts crop-local coordinates to full-image coordinates", () => {
+test('mapBoxFromCrop converts crop-local coordinates to full-image coordinates', () => {
   const mapped = mapBoxFromCrop(
     { page: 1, x: 0.5, y: 0.25, width: 0.2, height: 0.4 },
     { page: 1, x: 0.2, y: 0.1, width: 0.5, height: 0.6 },

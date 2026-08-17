@@ -1,16 +1,16 @@
-import assert from "node:assert/strict";
-import test from "node:test";
-import { mkdtemp, rm } from "node:fs/promises";
-import os from "node:os";
-import path from "node:path";
-import sharp from "sharp";
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { mkdtemp, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import sharp from 'sharp';
 
-import { AssetStore } from "./asset-store.js";
+import { AssetStore } from './asset-store.js';
 
-test("AssetStore imports, normalizes and crops a local image", async () => {
-  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "vision-mcp-test-"));
+test('AssetStore imports, normalizes and crops a local image', async () => {
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'vision-mcp-test-'));
   try {
-    const source = path.join(temporaryRoot, "source.png");
+    const source = path.join(temporaryRoot, 'source.png');
     await sharp({
       create: {
         width: 1_000,
@@ -22,7 +22,7 @@ test("AssetStore imports, normalizes and crops a local image", async () => {
       .png()
       .toFile(source);
 
-    const store = new AssetStore(path.join(temporaryRoot, "assets"), 10 * 1024 * 1024, 10_000_000);
+    const store = new AssetStore(path.join(temporaryRoot, 'assets'), 10 * 1024 * 1024, 10_000_000);
     const imported = await store.importFile(source);
     assert.match(imported.assetId, /^img_.+\.png$/);
     assert.equal(imported.width, 1_000);
@@ -31,7 +31,7 @@ test("AssetStore imports, normalizes and crops a local image", async () => {
     const prepared = await store.prepare(
       imported.assetId,
       { page: 1, x: 0.25, y: 0, width: 0.5, height: 1 },
-      "low",
+      'low',
     );
     assert.equal(prepared.width, 1_000);
     assert.equal(prepared.height, 500);
