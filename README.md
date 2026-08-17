@@ -19,8 +19,8 @@ Text Agent (e.g. DeepSeek / Claude)
 ### Quick Start
 
 ```bash
-git clone https://github.com/wenren93/vision-mcp-typescript.git
-cd vision-mcp-typescript
+git clone https://github.com/wenren93/mimo-vision-mcp.git
+cd mimo-vision-mcp
 npm install
 cp .env.example .env
 # Edit .env and set MIMO_API_KEY
@@ -82,7 +82,7 @@ MiMo-V2.5 原生支持文本、图片、视频和音频输入，因此这里只�
 安装：
 
 ```bash
-cd vision-mcp-typescript
+cd mimo-vision-mcp
 npm install
 cp .env.example .env
 ```
@@ -155,8 +155,8 @@ claude mcp add vision \
   -e MIMO_API_KEY='你的 MiMo API Key' \
   -e MIMO_BASE_URL='https://api.xiaomimimo.com/anthropic' \
   -e VISION_MODEL='mimo-v2.5' \
-  -e VISION_ASSET_ROOT='/绝对路径/vision-mcp-typescript/assets' \
-  -- node /绝对路径/vision-mcp-typescript/dist/server.js
+  -e VISION_ASSET_ROOT='/绝对路径/mimo-vision-mcp/assets' \
+  -- node /绝对路径/mimo-vision-mcp/dist/server.js
 ```
 
 调用顺序：
@@ -189,12 +189,12 @@ import_image({ sourcePath: "/你的路径/page.png" })
   "mcpServers": {
     "vision": {
       "command": "node",
-      "args": ["/绝对路径/vision-mcp-typescript/dist/server.js"],
+      "args": ["/绝对路径/mimo-vision-mcp/dist/server.js"],
       "env": {
         "MIMO_API_KEY": "你的密钥",
         "MIMO_BASE_URL": "https://api.xiaomimimo.com/anthropic",
         "VISION_MODEL": "mimo-v2.5",
-        "VISION_ASSET_ROOT": "/绝对路径/vision-mcp-typescript/assets"
+        "VISION_ASSET_ROOT": "/绝对路径/mimo-vision-mcp/assets"
       }
     }
   }

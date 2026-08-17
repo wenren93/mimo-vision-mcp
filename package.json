@@ -1,5 +1,5 @@
 {
-  "name": "vision-mcp-typescript",
+  "name": "mimo-vision-mcp",
   "version": "0.4.0",
   "description": "Local MCP vision server powered by MiMo-V2.5 for image understanding",
   "type": "module",
@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wenren93/vision-mcp-typescript.git"
+    "url": "https://github.com/wenren93/mimo-vision-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/wenren93/vision-mcp-typescript/issues"
+    "url": "https://github.com/wenren93/mimo-vision-mcp/issues"
   },
-  "homepage": "https://github.com/wenren93/vision-mcp-typescript#readme",
+  "homepage": "https://github.com/wenren93/mimo-vision-mcp#readme",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",

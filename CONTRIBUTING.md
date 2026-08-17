@@ -5,8 +5,8 @@
 ## 开发环境
 
 ```bash
-git clone https://github.com/wenren93/vision-mcp-typescript.git
-cd vision-mcp-typescript
+git clone https://github.com/wenren93/mimo-vision-mcp.git
+cd mimo-vision-mcp
 npm install
 cp .env.example .env
 # 编辑 .env 填入你的 API Key
